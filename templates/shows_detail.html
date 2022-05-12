@@ -6,19 +6,47 @@
     <title>Shows Detail</title>
     <link rel="stylesheet" type="text/css" href="{% static 'css/bootstrap.css/' %}" />
 </head>
-
-<div class="container button__container">
-    <a href="/shows/" class="btn btn-primary">SHOWS</a>
-</div>
-
+<style>
+    .button__container{
+        text-align: center;
+    }
+    body{
+        background-color: bisque;
+    }
+    .btn__{
+        background-color: white;
+    }
+</style>
+<br>
 <body>
-        <div>
-            <h2>{{ show.title }}</h2>
-            <p>{{ show.description }}</p>
-            <img src="{{ show.image.url }}" alt="">
-            <p>{{ show.quantity }}</p>
-            <p>{{ show.genre }}</p>
-            <p>{{ show.date_filmed }}</p>
-        </div>
+<div class="container button__container">
+    <a href="/shows/" class="btn btn-primary">Back</a>
+</div>
+<br>
+
+<center>
+<figure class="figure">
+  <img src="{{ show.image.url }}"
+       class="figure-img img-fluid rounded" alt="..." height="640" width="640">
+  <figcaption class="figure-caption">
+      <h2>{{ show.title }}</h2>
+      <hr>
+            <b>{{ show.description }}</b>
+      <hr>
+            <b>{{ show.quantity }}</b>
+      <hr>
+            <b>{{ show.genre }}</b>
+      <hr>
+            <b>{{ show.date_filmed }}</b>
+
+  </figcaption>
+</figure>
+    <div class="card-body body_button__" >
+    <button type="button" class="btn btn-primary btn__">
+        <a href="/shows/{{show.id}}/update/">Update</a></button>
+    </div>
+
+    </center>
+
 </body>
 </html>
